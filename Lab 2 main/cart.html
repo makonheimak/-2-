@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - ОкнаПрофи</title>
+    <!-- Модульные CSS файлы -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/cart-styles.css">
+    <link rel="stylesheet" href="css/newsletter.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ОКНАПРОФИ</span>
+                </a>
+               
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+                        <li><a href="#" class="nav-link">ОКНА</a></li>
+                        <li><a href="#" class="nav-link">БАЛКОНЫ</a></li>
+                        <li><a href="#" class="nav-link">ДВЕРИ</a></li>
+                        <li><a href="#" class="nav-link">УСЛУГИ</a></li>
+                        <li><a href="#" class="nav-link">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+
+
+                <div class="header-actions">
+                    <form class="search-form">
+                        <input type="search" placeholder="Поиск по сайту">
+                    </form>
+                    <a href="cart.html" class="cart-icon">Корзина (<span id="cart-count">3</span>)</a>
+                    <button class="btn-primary">Мой аккаунт</button>
+                </div>
+
+
+                <button class="mobile-menu-btn">Меню</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <h1 class="page-title">КОРЗИНА</h1>
+                <div class="breadcrumb-links">
+                    <a href="index.html">ГЛАВНАЯ</a> / <a href="cart.html">КОРЗИНА</a> / <span>КОРЗИНА ПОКУПОК</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Cart Content -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <!-- Item 1 -->
+                    <div class="cart-item" data-price="12990">
+                        <div class="item-image">
+                            <!-- ФОТО: Окно STANDART -->
+                            <img src="image/standart.png" alt="Окно STANDART" style="width:120px;height:120px;object-fit:cover;border-radius:4px;">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-name">Окно STANDART белое</h3>
+                            <p class="item-description">Стандартное пластиковое окно, профиль 60мм, двухкамерный стеклопакет</p>
+                            <div class="item-specs">
+                                <span>Размер: 1200x1400мм</span>
+                                <span>Цвет: Белый</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">12 990₽</span>
+                        </div>
+                        <button class="item-remove">×</button>
+                    </div>
+
+
+                    <!-- Item 2 -->
+                    <div class="cart-item" data-price="18500">
+                        <div class="item-image">
+                            <!-- ФОТО: Окно PREMIUM -->
+                            <img src="image/premium.png" alt="Окно PREMIUM" style="width:120px;height:120px;object-fit:cover;border-radius:4px;">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-name">Окно PREMIUM с ламинацией</h3>
+                            <p class="item-description">Премиум окно с ламинацией под дерево, профиль 70мм</p>
+                            <div class="item-specs">
+                                <span>Размер: 1400x1500мм</span>
+                                <span>Цвет: Дуб золотой</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="2" min="1" class="qty-input" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">37 000₽</span>
+                        </div>
+                        <button class="item-remove">×</button>
+                    </div>
+
+
+                    <!-- Item 3 -->
+                    <div class="cart-item" data-price="15800">
+                        <div class="item-image">
+                            <!-- ФОТО: Балконная дверь -->
+                            <img src="image/balcony.png" alt="Балконная дверь BALCONY" style="width:120px;height:120px;object-fit:cover;border-radius:4px;">
+                        </div>
+                        <div class="item-details">
+                            <h3 class="item-name">Балконная дверь BALCONY</h3>
+                            <p class="item-description">Балконная дверь с энергосберегающим стеклопакетом</p>
+                            <div class="item-specs">
+                                <span>Размер: 800x2100мм</span>
+                                <span>Цвет: Белый</span>
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="qty-input" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <div class="item-price">
+                            <span class="price">15 800₽</span>
+                        </div>
+                        <button class="item-remove">×</button>
+                    </div>
+
+
+                    <!-- Cart Actions -->
+                    <div class="cart-actions">
+                        <a href="index.html" class="btn-secondary">Продолжить покупки</a>
+                        <button class="btn-clear">Очистить корзину</button>
+                    </div>
+
+
+                    <!-- Coupon Section -->
+                    <div class="coupon-section">
+                        <h3>Есть промокод?</h3>
+                        <form class="coupon-form" id="couponForm">
+                            <input type="text" placeholder="Введите промокод" class="coupon-input" id="couponInput">
+                            <button type="submit" class="btn-apply">Применить</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h3 class="summary-title">ИТОГО</h3>
+                   
+                    <div class="summary-row">
+                        <span>Подытог:</span>
+                        <span class="summary-value" id="subtotal">65 790₽</span>
+                    </div>
+                   
+                    <div class="summary-row">
+                        <span>Доставка:</span>
+                        <span class="summary-value">Бесплатно</span>
+                    </div>
+
+
+                    <div class="summary-row" id="discountRow" style="display:none;">
+                        <span>Скидка:</span>
+                        <span class="summary-value discount" id="discount">-6 580₽</span>
+                    </div>
+                   
+                    <div class="summary-divider"></div>
+                   
+                    <div class="summary-row total">
+                        <span>Итого к оплате:</span>
+                        <span class="summary-value" id="total">65 790₽</span>
+                    </div>
+
+
+                    <a href="checkout.html" class="btn-checkout">Оформить заказ</a>
+
+
+                    <div class="delivery-info">
+                        <h4>Бесплатная доставка</h4>
+                        <p>При заказе от 20 000₽ доставка по городу абсолютно бесплатна</p>
+                    </div>
+
+
+                    <div class="payment-methods">
+                        <h4>Способы оплаты</h4>
+                        <div class="payment-icons">
+                            <span class="payment-icon">VISA</span>
+                            <span class="payment-icon">MC</span>
+                            <span class="payment-icon">МИР</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">Вам также может понравиться</h2>
+           
+            <div class="products-grid">
+                <div class="product-card">
+                    <!-- ФОТО: Москитная сетка -->
+                    <div class="product-image">
+                        <img src="image/comfort.png" alt="Москитная сетка" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">Москитная сетка</h4>
+                    <p class="product-price">1 500₽</p>
+                    <button class="btn-add-cart">В корзину</button>
+                </div>
+
+
+                <div class="product-card">
+                    <!-- ФОТО: Подоконник -->
+                    <div class="product-image">
+                        <img src="image/premium.png" alt="Подоконник PREMIUM" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">Подоконник PREMIUM</h4>
+                    <p class="product-price">2 800₽</p>
+                    <button class="btn-add-cart">В корзину</button>
+                </div>
+
+
+                <div class="product-card">
+                    <!-- ФОТО: Откосы -->
+                    <div class="product-image">
+                        <img src="image/classic.png" alt="Откосы пластиковые" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">Откосы пластиковые</h4>
+                    <p class="product-price">1 200₽</p>
+                    <button class="btn-add-cart">В корзину</button>
+                </div>
+
+
+                <div class="product-card">
+                    <!-- ФОТО: Жалюзи -->
+                    <div class="product-image">
+                        <img src="image/energy.png" alt="Жалюзи горизонтальные" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">Жалюзи горизонтальные</h4>
+                    <p class="product-price">3 500₽</p>
+                    <button class="btn-add-cart">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-bg"></div>
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>ПОДПИШИТЕСЬ НА РАССЫЛКУ</h3>
+                    <p>Получайте информацию о новинках и специальных предложениях</p>
+                </div>
+                <div class="subscribe-form">
+                    <form>
+                        <input type="email" placeholder="Введите ваш Email" required>
+                        <button type="submit" class="btn-subscribe">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">ОКНАПРОФИ</span>
+                    </div>
+                    <p class="footer-description">
+                        Профессиональное остекление квартир, балконов и загородных домов.
+                        Работаем с 2010 года. Более 10 000 довольных клиентов.
+                    </p>
+                    <p class="footer-copyright">© 2025 ОкнаПрофи. Все права защищены.</p>
+                </div>
+
+
+                <div class="footer-col">
+                    <h5>КОМПАНИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h5>ИНФОРМАЦИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Как мы работаем</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-col">
+                    <h5>КАТЕГОРИИ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Окна</a></li>
+                        <li><a href="#">Балконы</a></li>
+                        <li><a href="#">Двери</a></li>
+                        <li><a href="#">Фурнитура</a></li>
+                        <li><a href="#">Аксессуары</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="footer-social">
+                <a href="#" class="social-link">VK</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">WhatsApp</a>
+                <a href="#" class="social-link">Telegram</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Функция обновления итоговой суммы
+        function updateCartTotal() {
+            let subtotal = 0;
+            const items = document.querySelectorAll('.cart-item');
+           
+            items.forEach(item => {
+                const price = parseInt(item.dataset.price);
+                const qty = parseInt(item.querySelector('.qty-input').value);
+                const itemTotal = price * qty;
+               
+                // Обновляем цену товара
+                item.querySelector('.price').textContent = itemTotal.toLocaleString('ru-RU') + '₽';
+                subtotal += itemTotal;
+            });
+           
+            // Обновляем подытог
+            document.getElementById('subtotal').textContent = subtotal.toLocaleString('ru-RU') + '₽';
+           
+            // Проверяем есть ли скидка
+            const discountRow = document.getElementById('discountRow');
+            let total = subtotal;
+           
+            if (discountRow.style.display !== 'none') {
+                const discountText = document.getElementById('discount').textContent;
+                const discountAmount = parseInt(discountText.replace(/\D/g, ''));
+                total = subtotal - discountAmount;
+            }
+           
+            // Обновляем итого
+            document.getElementById('total').textContent = total.toLocaleString('ru-RU') + '₽';
+           
+            // Обновляем счётчик в header
+            document.getElementById('cart-count').textContent = items.length;
+        }
+
+
+        // Обработчики кнопок количества
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                const input = item.querySelector('.qty-input');
+                let value = parseInt(input.value);
+               
+                if (this.classList.contains('plus')) {
+                    value++;
+                } else if (this.classList.contains('minus') && value > 1) {
+                    value--;
+                }
+               
+                input.value = value;
+                updateCartTotal();
+            });
+        });
+
+
+        // Удаление товара
+        document.querySelectorAll('.item-remove').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(confirm('Удалить товар из корзины?')) {
+                    this.closest('.cart-item').remove();
+                    updateCartTotal();
+                }
+            });
+        });
+
+
+        // Очистка корзины
+        document.querySelector('.btn-clear').addEventListener('click', function() {
+            if(confirm('Очистить всю корзину?')) {
+                document.querySelectorAll('.cart-item').forEach(item => item.remove());
+                updateCartTotal();
+            }
+        });
+
+
+        // Применение промокода
+        document.getElementById('couponForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const couponInput = document.getElementById('couponInput');
+            const coupon = couponInput.value.trim().toUpperCase();
+           
+            if(coupon === 'SALE10') {
+                const subtotal = parseInt(document.getElementById('subtotal').textContent.replace(/\D/g, ''));
+                const discount = Math.round(subtotal * 0.1);
+               
+                document.getElementById('discount').textContent = '-' + discount.toLocaleString('ru-RU') + '₽';
+                document.getElementById('discountRow').style.display = 'flex';
+               
+                updateCartTotal();
+                alert('Промокод применён! Скидка 10%');
+                couponInput.value = '';
+            } else if(coupon) {
+                alert('Неверный промокод');
+            } else {
+                alert('Введите промокод');
+            }
+        });
+
+
+        // Инициализация при загрузке
+        updateCartTotal();
+    </script>
+</body>
+</html>

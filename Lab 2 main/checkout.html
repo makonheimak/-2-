@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - ОкнаПрофи</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/checkout-styles.css">
+    <link rel="stylesheet" href="css/newsletter.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ОКНАПРОФИ</span>
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+                        <li><a href="#" class="nav-link">ОКНА</a></li>
+                        <li><a href="#" class="nav-link">БАЛКОНЫ</a></li>
+                        <li><a href="#" class="nav-link">ДВЕРИ</a></li>
+                        <li><a href="#" class="nav-link">УСЛУГИ</a></li>
+                        <li><a href="#" class="nav-link">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <form class="search-form">
+                        <input type="search" placeholder="Поиск по сайту">
+                    </form>
+                    <a href="cart.html" class="cart-icon">Корзина (3)</a>
+                    <button class="btn-primary">Мой аккаунт</button>
+                </div>
+
+                <button class="mobile-menu-btn">Меню</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <h1 class="page-title">ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+                <div class="breadcrumb-links">
+                    <a href="index.html">ГЛАВНАЯ</a> / <a href="cart.html">КОРЗИНА</a> / <span>ОФОРМЛЕНИЕ ЗАКАЗА</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Steps -->
+    <section class="checkout-section">
+        <div class="container">
+            
+            <!-- Step 1: Shipping Address -->
+            <div class="checkout-step active" id="step1">
+                <div class="step-header" onclick="toggleStep('step1')">
+                    <h2 class="step-number">01.</h2>
+                    <h2 class="step-title">АДРЕС ДОСТАВКИ</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">ОФОРМИТЬ КАК ГОСТЬ ИЛИ ЗАРЕГИСТРИРОВАТЬСЯ</h3>
+                            <p class="section-description">Зарегистрируйтесь для удобства в будущем</p>
+                            
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="checkout_type" value="guest" checked>
+                                    <span class="radio-label">ОФОРМИТЬ КАК ГОСТЬ</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="checkout_type" value="register">
+                                    <span class="radio-label">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                                </label>
+                            </div>
+
+                            <div class="benefits">
+                                <h4>ЗАРЕГИСТРИРУЙТЕСЬ И СЭКОНОМЬТЕ ВРЕМЯ!</h4>
+                                <p>Зарегистрируйтесь для удобства в будущем</p>
+                                <ul class="benefits-list">
+                                    <li>Быстрое и удобное оформление заказа</li>
+                                    <li>Удобный доступ к истории заказов</li>
+                                    <li>Специальные предложения для зарегистрированных пользователей</li>
+                                </ul>
+                            </div>
+
+                            <button class="btn-continue" onclick="goToStep('step2')">ПРОДОЛЖИТЬ</button>
+                        </div>
+
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">УЖЕ ЗАРЕГИСТРИРОВАНЫ?</h3>
+                            <p class="section-description">Пожалуйста, войдите ниже</p>
+                            
+                            <form class="login-form" id="loginForm">
+                                <div class="form-group">
+                                    <label class="form-label">EMAIL АДРЕС <span class="required">*</span></label>
+                                    <input type="email" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">ПАРОЛЬ <span class="required">*</span></label>
+                                    <input type="password" class="form-input" required>
+                                </div>
+
+                                <p class="required-note">* Обязательные поля</p>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn-login">ВОЙТИ</button>
+                                    <a href="#" class="forgot-link">Забыли пароль?</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Billing Information -->
+            <div class="checkout-step" id="step2">
+                <div class="step-header" onclick="toggleStep('step2')">
+                    <h2 class="step-number">02.</h2>
+                    <h2 class="step-title">ПЛАТЕЖНАЯ ИНФОРМАЦИЯ</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">КОНТАКТНАЯ ИНФОРМАЦИЯ</h3>
+                            
+                            <form class="billing-form">
+                                <div class="form-group">
+                                    <label class="form-label">ИМЯ <span class="required">*</span></label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">ФАМИЛИЯ <span class="required">*</span></label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">ТЕЛЕФОН <span class="required">*</span></label>
+                                    <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">EMAIL <span class="required">*</span></label>
+                                    <input type="email" class="form-input" required>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">АДРЕС</h3>
+                            
+                            <form class="address-form">
+                                <div class="form-group">
+                                    <label class="form-label">ГОРОД <span class="required">*</span></label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">УЛИЦА <span class="required">*</span></label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">ДОМ / КВАРТИРА <span class="required">*</span></label>
+                                    <input type="text" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">ПОЧТОВЫЙ ИНДЕКС</label>
+                                    <input type="text" class="form-input">
+                                </div>
+                            </form>
+
+                            <button class="btn-continue" onclick="goToStep('step3')">ПРОДОЛЖИТЬ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Shipping Information -->
+            <div class="checkout-step" id="step3">
+                <div class="step-header" onclick="toggleStep('step3')">
+                    <h2 class="step-number">03.</h2>
+                    <h2 class="step-title">ИНФОРМАЦИЯ О ДОСТАВКЕ</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">АДРЕС ДОСТАВКИ</h3>
+                            <p class="section-description">Совпадает с адресом выше или укажите другой</p>
+                            
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="delivery_address" value="same" checked>
+                                    <span class="radio-label">ТОТ ЖЕ АДРЕС</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="delivery_address" value="different">
+                                    <span class="radio-label">ДРУГОЙ АДРЕС</span>
+                                </label>
+                            </div>
+
+                            <button class="btn-continue" onclick="goToStep('step4')">ПРОДОЛЖИТЬ</button>
+                        </div>
+
+                        <div class="checkout-col">
+                            <div class="benefits">
+                                <h4>ИНФОРМАЦИЯ О ДОСТАВКЕ</h4>
+                                <ul class="benefits-list">
+                                    <li>Бесплатная доставка при заказе от 20 000₽</li>
+                                    <li>Доставка в течение 3-5 рабочих дней</li>
+                                    <li>Возможность выбора удобного времени</li>
+                                    <li>Профессиональная установка</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Shipping Method -->
+            <div class="checkout-step" id="step4">
+                <div class="step-header" onclick="toggleStep('step4')">
+                    <h2 class="step-number">04.</h2>
+                    <h2 class="step-title">СПОСОБ ДОСТАВКИ</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">ВЫБЕРИТЕ СПОСОБ ДОСТАВКИ</h3>
+                            
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="shipping_method" value="standard" checked>
+                                    <span class="radio-label">СТАНДАРТНАЯ ДОСТАВКА (3-5 ДНЕЙ) - БЕСПЛАТНО</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="shipping_method" value="express">
+                                    <span class="radio-label">ЭКСПРЕСС ДОСТАВКА (1-2 ДНЯ) - 1 500₽</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="shipping_method" value="pickup">
+                                    <span class="radio-label">САМОВЫВОЗ - БЕСПЛАТНО</span>
+                                </label>
+                            </div>
+
+                            <button class="btn-continue" onclick="goToStep('step5')">ПРОДОЛЖИТЬ</button>
+                        </div>
+
+                        <div class="checkout-col">
+                            <div class="benefits">
+                                <h4>ПРЕИМУЩЕСТВА ДОСТАВКИ</h4>
+                                <ul class="benefits-list">
+                                    <li>Отслеживание заказа онлайн</li>
+                                    <li>СМС-уведомление о доставке</li>
+                                    <li>Бережная транспортировка</li>
+                                    <li>Страхование груза</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Payment Method -->
+            <div class="checkout-step" id="step5">
+                <div class="step-header" onclick="toggleStep('step5')">
+                    <h2 class="step-number">05.</h2>
+                    <h2 class="step-title">СПОСОБ ОПЛАТЫ</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+                            
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="payment_method" value="card" checked>
+                                    <span class="radio-label">БАНКОВСКАЯ КАРТА</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="payment_method" value="cash">
+                                    <span class="radio-label">НАЛИЧНЫМИ ПРИ ПОЛУЧЕНИИ</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="payment_method" value="online">
+                                    <span class="radio-label">ОНЛАЙН ПЕРЕВОД</span>
+                                </label>
+                            </div>
+
+                            <button class="btn-continue" onclick="goToStep('step6')">ПРОДОЛЖИТЬ</button>
+                        </div>
+
+                        <div class="checkout-col">
+                            <div class="benefits">
+                                <h4>БЕЗОПАСНАЯ ОПЛАТА</h4>
+                                <p>Все платежи защищены по стандартам PCI DSS</p>
+                                <ul class="benefits-list">
+                                    <li>Принимаем VISA, MasterCard, МИР</li>
+                                    <li>SSL шифрование данных</li>
+                                    <li>Возврат средств в течение 14 дней</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Order Review -->
+            <div class="checkout-step" id="step6">
+                <div class="step-header" onclick="toggleStep('step6')">
+                    <h2 class="step-number">06.</h2>
+                    <h2 class="step-title">ПРОВЕРКА ЗАКАЗА</h2>
+                </div>
+                
+                <div class="step-content">
+                    <div class="checkout-columns">
+                        <div class="checkout-col">
+                            <h3 class="section-subtitle">ДЕТАЛИ ЗАКАЗА</h3>
+                            
+                            <div class="order-summary">
+                                <div class="summary-row">
+                                    <span>Товары (3 шт.):</span>
+                                    <span class="summary-value">65 790₽</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Доставка:</span>
+                                    <span class="summary-value">Бесплатно</span>
+                                </div>
+                                <div class="summary-row">
+                                    <span>Скидка:</span>
+                                    <span class="summary-value discount">-6 580₽</span>
+                                </div>
+                                <div class="summary-divider"></div>
+                                <div class="summary-row total">
+                                    <span>ИТОГО К ОПЛАТЕ:</span>
+                                    <span class="summary-value">59 210₽</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 20px;">
+                                <label class="radio-option">
+                                    <input type="checkbox" id="termsCheckbox" required>
+                                    <span class="radio-label" style="text-transform: none;">Я согласен с условиями и политикой конфиденциальности</span>
+                                </label>
+                            </div>
+
+                            <button class="btn-continue" onclick="placeOrder()" style="margin-top: 20px;">ОФОРМИТЬ ЗАКАЗ</button>
+                        </div>
+
+                        <div class="checkout-col">
+                            <div class="benefits">
+                                <h4>ВАШ ЗАКАЗ</h4>
+                                <ul class="benefits-list">
+                                    <li>Окно STANDART белое - 12 990₽</li>
+                                    <li>Окно PREMIUM с ламинацией (x2) - 37 000₽</li>
+                                    <li>Балконная дверь BALCONY - 15 800₽</li>
+                                </ul>
+                            </div>
+
+                            <div class="benefits" style="margin-top: 20px;">
+                                <h4>ЧТО ДАЛЬШЕ?</h4>
+                                <ul class="benefits-list">
+                                    <li>Подтверждение заказа на email</li>
+                                    <li>Звонок менеджера в течение часа</li>
+                                    <li>Согласование времени доставки</li>
+                                    <li>Доставка и установка</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-bg"></div>
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>ПОДПИШИТЕСЬ НА РАССЫЛКУ</h3>
+                    <p>Получайте информацию о новинках и специальных предложениях</p>
+                </div>
+                <div class="subscribe-form">
+                    <form>
+                        <input type="email" placeholder="Введите ваш Email" required>
+                        <button type="submit" class="btn-subscribe">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">ОКНАПРОФИ</span>
+                    </div>
+                    <p class="footer-description">
+                        Профессиональное остекление квартир, балконов и загородных домов. 
+                        Работаем с 2010 года. Более 10 000 довольных клиентов.
+                    </p>
+                    <p class="footer-copyright">© 2025 ОкнаПрофи. Все права защищены.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>КОМПАНИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>ИНФОРМАЦИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Как мы работаем</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>КАТЕГОРИИ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Окна</a></li>
+                        <li><a href="#">Балконы</a></li>
+                        <li><a href="#">Двери</a></li>
+                        <li><a href="#">Фурнитура</a></li>
+                        <li><a href="#">Аксессуары</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" class="social-link">VK</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">WhatsApp</a>
+                <a href="#" class="social-link">Telegram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Переключение шагов (accordion)
+        function toggleStep(stepId) {
+            const step = document.getElementById(stepId);
+            step.classList.toggle('active');
+        }
+
+        // Переход к следующему шагу
+        function goToStep(nextStepId) {
+            // Закрываем все шаги
+            document.querySelectorAll('.checkout-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Открываем нужный шаг
+            const nextStep = document.getElementById(nextStepId);
+            nextStep.classList.add('active');
+            
+            // Прокручиваем к шагу
+            nextStep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Обработка формы входа
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Вход выполнен успешно!');
+            goToStep('step2');
+        });
+
+        // Оформление заказа
+        function placeOrder() {
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            
+            if (!termsCheckbox.checked) {
+                alert('Пожалуйста, согласитесь с условиями и политикой конфиденциальности');
+                return;
+            }
+            
+            // Имитация оформления заказа
+            if(confirm('Подтвердить заказ на сумму 59 210₽?')) {
+                alert('✅ Заказ успешно оформлен!\n\nНомер заказа: #12345\n\nПодробности отправлены на ваш email.\nМенеджер свяжется с вами в ближайшее время.');
+                
+                // Перенаправление на главную через 2 секунды
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            }
+        }
+
+        // Автоматическое открытие первого шага
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('step1').classList.add('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+/* ==================== CSS ПЕРЕМЕННЫЕ ==================== */
+:root {
+    /* Основные цвета - голубая палитра для окон */
+    --primary-color: #4A90E2;
+    --primary-light: #6BA3E8;
+    --primary-dark: #2C5F8D;
+    --secondary-color: #87CEEB;
+    --accent-color: #5DC4FF;
+    
+    /* Дополнительные акценты */
+    --success-color: #90EE90;
+    --warning-color: #FFD700;
+    --error-color: #FF6B6B;
+    --pink-accent: #FF6B9D;
+    
+    /* Текст */
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-muted: #999999;
+    
+    /* Фоны */
+    --white: #FFFFFF;
+    --bg-light: #F8F9FA;
+    --bg-gradient-blue: linear-gradient(135deg, #4A90E2 0%, #87CEEB 100%);
+    --bg-gradient-light: linear-gradient(135deg, #E8F4FA 0%, #D4E9F7 100%);
+    
+    /* Границы и тени */
+    --border-color: #E0E0E0;
+    --border-radius: 15px;
+    --border-radius-sm: 8px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 12px 32px rgba(74, 144, 226, 0.25);
+}
+
+/* ==================== СБРОС СТИЛЕЙ ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background: var(--white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==================== КОНТЕЙНЕР ==================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ==================== ОБЩИЕ КЛАССЫ ==================== */
+
+/* Кнопки с градиентом */
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--bg-gradient-blue);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 16px;
+}
+
+/* Карточки */
+.card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Бейджи */
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-new {
+    background: var(--success-color);
+    color: var(--text-dark);
+}
+
+.badge-sale {
+    background: var(--pink-accent);
+    color: var(--white);
+}
+
+.badge-hot {
+    background: var(--warning-color);
+    color: var(--text-dark);
+}
+
+.badge-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Заголовки секций */
+.section-title {
+    font-size: 36px;
+    color: var(--primary-dark);
+    font-weight: 700;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--bg-gradient-blue);
+    border-radius: 2px;
+}
+
+.section-title.centered {
+    text-align: center;
+}
+
+.section-title.centered::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Формы */
+.form-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 30px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+    background: var(--white);
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Градиентные фоны */
+.gradient-bg-blue {
+    background: var(--bg-gradient-blue);
+}
+
+.gradient-bg-light {
+    background: var(--bg-gradient-light);
+}
+
+/* Тени */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* Утилиты */
+.text-center { text-align: center; }
+.text-primary { color: var(--primary-color); }
+.text-muted { color: var(--text-muted); }
+
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+.mt-4 { margin-top: 40px; }
+.mt-5 { margin-top: 50px; }
+
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+.mb-4 { margin-bottom: 40px; }
+.mb-5 { margin-bottom: 50px; }
+
+.p-3 { padding: 30px; }
+.p-4 { padding: 40px; }
+.p-5 { padding: 50px; }
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ==================== АДАПТИВ ДЛЯ КОНТЕЙНЕРА ==================== */
+
+/* Большие мониторы – 1280px и выше */
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1240px;
+    }
+    
+    .section-title {
+        font-size: 42px;
+    }
+}
+
+/* Планшеты – 768px */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+    
+    .btn {
+        padding: 12px 28px;
+        font-size: 13px;
+    }
+    
+    .btn-large {
+        padding: 14px 32px;
+        font-size: 15px;
+    }
+}
+
+/* Мобильные телефоны – 320px */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .btn {
+        padding: 10px 24px;
+        font-size: 12px;
+    }
+}

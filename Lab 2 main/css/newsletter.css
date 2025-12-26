@@ -1,0 +1,191 @@
+/* ==================== NEWSLETTER / СЕКЦИЯ ПОДПИСКИ ==================== */
+
+.newsletter {
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.newsletter-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-gradient-blue);
+    z-index: 1;
+}
+
+.newsletter-bg::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.newsletter-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.newsletter .container {
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Текст */
+.newsletter-text {
+    flex: 1;
+}
+
+.newsletter-text h3 {
+    font-size: 42px;
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.newsletter-text p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Форма подписки */
+.subscribe-form {
+    flex: 1;
+}
+
+.subscribe-form form {
+    display: flex;
+    gap: 15px;
+    max-width: 550px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 18px 28px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-size: 15px;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.subscribe-form input:focus {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.subscribe-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.btn-subscribe {
+    background: var(--white);
+    color: var(--primary-color);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-subscribe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== АДАПТИВ ==================== */
+
+/* Планшеты – 768px */
+@media (max-width: 768px) {
+    .newsletter {
+        padding: 70px 0;
+        min-height: 350px;
+    }
+    
+    .newsletter-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .newsletter-text h3 {
+        font-size: 32px;
+    }
+    
+    .newsletter-text p {
+        font-size: 16px;
+    }
+    
+    .subscribe-form form {
+        flex-direction: column;
+        max-width: 100%;
+        background: transparent;
+        padding: 0;
+        gap: 15px;
+    }
+    
+    .subscribe-form input {
+        padding: 16px 24px;
+        border-radius: 30px;
+    }
+    
+    .btn-subscribe {
+        padding: 16px 40px;
+        border-radius: 30px;
+        width: 100%;
+    }
+}
+
+/* Мобильные телефоны – 320px */
+@media (max-width: 320px) {
+    .newsletter {
+        padding: 50px 0;
+        min-height: 300px;
+    }
+    
+    .newsletter-text h3 {
+        font-size: 26px;
+    }
+    
+    .newsletter-text p {
+        font-size: 14px;
+    }
+    
+    .subscribe-form input,
+    .btn-subscribe {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}

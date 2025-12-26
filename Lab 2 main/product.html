@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Окно PREMIUM - ОкнаПрофи</title>
+    <!-- Модульные CSS файлы -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/product-styles.css">
+    <link rel="stylesheet" href="css/newsletter.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">ОКНАПРОФИ</span>
+                </a>
+                
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">ГЛАВНАЯ</a></li>
+                        <li><a href="#" class="nav-link active">ОКНА</a></li>
+                        <li><a href="#" class="nav-link">БАЛКОНЫ</a></li>
+                        <li><a href="#" class="nav-link">ДВЕРИ</a></li>
+                        <li><a href="#" class="nav-link">УСЛУГИ</a></li>
+                        <li><a href="#" class="nav-link">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <form class="search-form">
+                        <input type="search" placeholder="Поиск по сайту">
+                    </form>
+                    <a href="cart.html" class="cart-icon">Корзина (<span id="cart-count">3</span>)</a>
+                    <button class="btn-primary">Мой аккаунт</button>
+                </div>
+
+                <button class="mobile-menu-btn">Меню</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <h1 class="page-title">НОВИНКИ</h1>
+                <div class="breadcrumb-links">
+                    <a href="index.html">ГЛАВНАЯ</a> / <a href="#">ОКНА</a> / <span>НОВИНКИ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <!-- ФОТО: Основное изображение окна -->
+                        <img id="mainProductImage" src="image/premium.png" alt="Окно PREMIUM" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
+                    </div>
+                    <button class="gallery-nav prev" onclick="changeImage(-1)">‹</button>
+                    <button class="gallery-nav next" onclick="changeImage(1)">›</button>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info-section">
+                    <div class="product-category">КОЛЛЕКЦИЯ ПРЕМИУМ</div>
+                    <h1 class="product-title">ОКНО ПРЕМИУМ КЛАССА</h1>
+                    
+                    <p class="product-description">
+                        Премиальное пластиковое окно с ламинацией под натуральное дерево. 
+                        Энергосберегающий стеклопакет обеспечивает отличную теплоизоляцию. 
+                        Немецкая фурнитура гарантирует долговечность и плавность работы механизмов.
+                    </p>
+
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">МАТЕРИАЛ:</span>
+                            <span class="spec-value">ПВХ</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">ПРОФИЛЬ:</span>
+                            <span class="spec-value">70ММ</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">КАМЕРЫ:</span>
+                            <span class="spec-value">5</span>
+                        </div>
+                    </div>
+
+                    <div class="product-price" id="productPrice">18 500₽</div>
+
+                    <form class="product-options" id="productForm">
+                        <!-- Color Selection -->
+                        <div class="option-group">
+                            <label class="option-label">ВЫБЕРИТЕ ЦВЕТ</label>
+                            <div class="color-options">
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="white" checked onchange="updatePrice()">
+                                    <span class="color-box white"></span>
+                                    <span class="color-name">Белый</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="oak" onchange="updatePrice()">
+                                    <span class="color-box oak"></span>
+                                    <span class="color-name">Дуб</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div class="option-group">
+                            <label class="option-label">ВЫБЕРИТЕ РАЗМЕР</label>
+                            <select class="size-select" id="sizeSelect" onchange="updatePrice()">
+                                <option value="1200x1400">1200x1400 мм</option>
+                                <option value="1400x1500" selected>1400x1500 мм</option>
+                                <option value="1600x1500">1600x1500 мм (+2 000₽)</option>
+                                <option value="1800x1500">1800x1500 мм (+4 000₽)</option>
+                            </select>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="option-group">
+                            <label class="option-label">КОЛИЧЕСТВО</label>
+                            <div class="quantity-selector">
+                                <button type="button" class="qty-btn minus" onclick="changeQuantity(-1)">-</button>
+                                <input type="number" value="1" min="1" class="qty-value" id="quantityInput" readonly>
+                                <button type="button" class="qty-btn plus" onclick="changeQuantity(1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Add to Cart Button -->
+                        <button type="submit" class="btn-add-to-cart">
+                            <span class="cart-icon-btn">🛒</span> Добавить в корзину
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Like Also -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">ВАМ ТАКЖЕ МОЖЕТ ПОНРАВИТЬСЯ</h2>
+            
+            <div class="products-grid">
+                <a href="product.html?id=standart" class="product-card">
+                    <div class="product-image">
+                        <img src="image/standart.png" alt="Окно STANDART" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">ОКНО STANDART</h4>
+                    <p class="product-price">12 990₽</p>
+                </a>
+
+                <a href="product.html?id=energy" class="product-card">
+                    <div class="product-image">
+                        <img src="image/energy.png" alt="Окно ENERGY" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">ОКНО ENERGY</h4>
+                    <p class="product-price">21 000₽</p>
+                </a>
+
+                <a href="product.html?id=balcony" class="product-card">
+                    <div class="product-image">
+                        <img src="image/balcony.png" alt="Дверь BALCONY" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">ДВЕРЬ BALCONY</h4>
+                    <p class="product-price">15 800₽</p>
+                </a>
+
+                <a href="product.html?id=panorama" class="product-card">
+                    <div class="product-image">
+                        <img src="image/panorama.png" alt="Окно PANORAMA" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <h4 class="product-name">ОКНО PANORAMA</h4>
+                    <p class="product-price">32 500₽</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-bg"></div>
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>ПОДПИШИТЕСЬ НА РАССЫЛКУ</h3>
+                    <p>Получайте информацию о новинках и специальных предложениях</p>
+                </div>
+                <div class="subscribe-form">
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Введите ваш Email" required id="emailInput">
+                        <button type="submit" class="btn-subscribe">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-text">ОКНАПРОФИ</span>
+                    </div>
+                    <p class="footer-description">
+                        Профессиональное остекление квартир, балконов и загородных домов. 
+                        Работаем с 2010 года. Более 10 000 довольных клиентов.
+                    </p>
+                    <p class="footer-copyright">© 2025 ОкнаПрофи. Все права защищены.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>КОМПАНИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Наши работы</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>ИНФОРМАЦИЯ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Политика возврата</a></li>
+                        <li><a href="#">Гарантия</a></li>
+                        <li><a href="#">Как мы работаем</a></li>
+                        <li><a href="#">Обратная связь</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>КАТЕГОРИИ</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Окна</a></li>
+                        <li><a href="#">Балконы</a></li>
+                        <li><a href="#">Двери</a></li>
+                        <li><a href="#">Фурнитура</a></li>
+                        <li><a href="#">Аксессуары</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" class="social-link">VK</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">WhatsApp</a>
+                <a href="#" class="social-link">Telegram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // База данных товаров
+        const products = {
+            standart: {
+                name: 'ОКНО STANDART',
+                title: 'Стандартное пластиковое окно',
+                category: 'БАЗОВАЯ КОЛЛЕКЦИЯ',
+                description: 'Стандартное пластиковое окно с двухкамерным стеклопакетом. Надежная конструкция для комфортного остекления. Отличное соотношение цены и качества.',
+                price: 12990,
+                image: 'image/standart.png',
+                profile: '60ММ',
+                chambers: '3'
+            },
+            premium: {
+                name: 'ОКНО PREMIUM',
+                title: 'Окно премиум класса',
+                category: 'КОЛЛЕКЦИЯ ПРЕМИУМ',
+                description: 'Премиальное пластиковое окно с ламинацией под натуральное дерево. Энергосберегающий стеклопакет обеспечивает отличную теплоизоляцию. Немецкая фурнитура гарантирует долговечность и плавность работы механизмов.',
+                price: 18500,
+                image: 'image/premium.png',
+                profile: '70ММ',
+                chambers: '5'
+            },
+            energy: {
+                name: 'ОКНО ENERGY',
+                title: 'Энергосберегающее окно',
+                category: 'ЭНЕРГОЭФФЕКТИВНОСТЬ',
+                description: 'Окно с улучшенными энергосберегающими характеристиками. Специальное напыление стекла снижает теплопотери на 50%. Идеально для холодного климата.',
+                price: 21000,
+                image: 'image/energy.png',
+                profile: '70ММ',
+                chambers: '5'
+            },
+            panorama: {
+                name: 'ОКНО PANORAMA',
+                title: 'Панорамное окно',
+                category: 'ПАНОРАМНОЕ ОСТЕКЛЕНИЕ',
+                description: 'Большое панорамное окно с максимальной площадью остекления. Увеличенные размеры для максимального освещения помещения. Усиленная конструкция.',
+                price: 32500,
+                image: 'image/panorama.png',
+                profile: '70ММ',
+                chambers: '5'
+            },
+            balcony: {
+                name: 'ДВЕРЬ BALCONY',
+                title: 'Балконная дверь',
+                category: 'ДВЕРИ',
+                description: 'Балконная дверь с энергосберегающим стеклопакетом. Надежная фурнитура и плавное открывание. Идеально подходит для выхода на балкон или террасу.',
+                price: 15800,
+                image: 'image/balcony.png',
+                profile: '70ММ',
+                chambers: '4'
+            },
+            classic: {
+                name: 'ОКНО CLASSIC',
+                title: 'Классическое окно',
+                category: 'КЛАССИЧЕСКАЯ КОЛЛЕКЦИЯ',
+                description: 'Классическое окно в традиционном стиле. Проверенная временем конструкция. Отличная звукоизоляция и теплосбережение.',
+                price: 16200,
+                image: 'image/classic.png',
+                profile: '60ММ',
+                chambers: '4'
+            },
+            comfort: {
+                name: 'ОКНО COMFORT',
+                title: 'Комфортное окно',
+                category: 'КОЛЛЕКЦИЯ КОМФОРТ',
+                description: 'Окно с повышенным уровнем комфорта. Улучшенная звукоизоляция и теплозащита. Идеально для городских квартир.',
+                price: 19900,
+                image: 'image/comfort.png',
+                profile: '70ММ',
+                chambers: '5'
+            },
+            color: {
+                name: 'ОКНО COLOR',
+                title: 'Цветное окно',
+                category: 'ДИЗАЙНЕРСКАЯ КОЛЛЕКЦИЯ',
+                description: 'Окно с цветным профилем на ваш выбор. Широкая палитра цветов и текстур. Создайте уникальный дизайн вашего дома.',
+                price: 24300,
+                image: 'image/color.png',
+                profile: '70ММ',
+                chambers: '5'
+            }
+        };
+
+        // Получаем ID товара из URL
+        function getProductIdFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || 'premium'; // По умолчанию premium
+        }
+
+        // Загружаем данные товара
+        function loadProduct() {
+            const productId = getProductIdFromURL();
+            const product = products[productId];
+            
+            if (!product) {
+                console.error('Товар не найден');
+                return;
+            }
+            
+            // Обновляем заголовок страницы
+            document.title = product.name + ' - ОкнаПрофи';
+            
+            // Обновляем изображение
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = product.image;
+            mainImage.alt = product.name;
+            
+            // Обновляем категорию
+            document.querySelector('.product-category').textContent = product.category;
+            
+            // Обновляем заголовок
+            document.querySelector('.product-title').textContent = product.title.toUpperCase();
+            
+            // Обновляем описание
+            document.querySelector('.product-description').textContent = product.description;
+            
+            // Обновляем характеристики
+            document.querySelector('.spec-item:nth-child(2) .spec-value').textContent = product.profile;
+            document.querySelector('.spec-item:nth-child(3) .spec-value').textContent = product.chambers;
+            
+            // Устанавливаем базовую цену
+            window.basePrice = product.price;
+            window.currentImages = [product.image, product.image, product.image];
+            window.currentProductName = product.name;
+            
+            updatePrice();
+        }
+
+        let currentImageIndex = 0;
+
+        // Изменение количества товара
+        function changeQuantity(delta) {
+            const input = document.getElementById('quantityInput');
+            let value = parseInt(input.value) + delta;
+            if (value < 1) value = 1;
+            input.value = value;
+            updatePrice();
+        }
+
+        // Обновление цены в зависимости от выбранных опций
+        function updatePrice() {
+            let price = window.basePrice;
+            
+            // Добавляем стоимость за цвет (дуб дороже)
+            const colorOak = document.querySelector('input[name="color"][value="oak"]');
+            if (colorOak && colorOak.checked) {
+                price += 3000;
+            }
+            
+            // Добавляем стоимость за размер
+            const sizeSelect = document.getElementById('sizeSelect');
+            const selectedSize = sizeSelect.value;
+            if (selectedSize === '1600x1500') {
+                price += 2000;
+            } else if (selectedSize === '1800x1500') {
+                price += 4000;
+            }
+            
+            // Умножаем на количество
+            const quantity = parseInt(document.getElementById('quantityInput').value);
+            const totalPrice = price * quantity;
+            
+            // Обновляем отображение цены
+            const priceElement = document.getElementById('productPrice');
+            if (quantity > 1) {
+                priceElement.innerHTML = `${price.toLocaleString('ru-RU')}₽ × ${quantity} = <span style="color:#ff6b8a;">${totalPrice.toLocaleString('ru-RU')}₽</span>`;
+            } else {
+                priceElement.textContent = totalPrice.toLocaleString('ru-RU') + '₽';
+            }
+        }
+
+        // Переключение изображений в галерее
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = window.currentImages.length - 1;
+            if (currentImageIndex >= window.currentImages.length) currentImageIndex = 0;
+            
+            const imageElement = document.getElementById('mainProductImage');
+            
+            // Анимация смены изображения
+            imageElement.style.opacity = '0';
+            setTimeout(() => {
+                imageElement.src = window.currentImages[currentImageIndex];
+                imageElement.style.opacity = '1';
+            }, 150);
+        }
+
+        // Добавление товара в корзину
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const quantity = document.getElementById('quantityInput').value;
+            const color = document.querySelector('input[name="color"]:checked').nextElementSibling.nextElementSibling.textContent;
+            const size = document.getElementById('sizeSelect').selectedOptions[0].textContent;
+            
+            // Получаем текущую цену
+            const priceText = document.getElementById('productPrice').textContent;
+            
+            alert(`✅ Товар добавлен в корзину!\n\n${window.currentProductName}\nЦвет: ${color}\nРазмер: ${size}\nКоличество: ${quantity} шт.\nСумма: ${priceText}`);
+            
+            // Обновляем счётчик в корзине
+            const cartCount = document.getElementById('cart-count');
+            cartCount.textContent = parseInt(cartCount.textContent) + parseInt(quantity);
+            
+            // Подсветка кнопки корзины
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.background = '#90EE90';
+            setTimeout(() => {
+                cartIcon.style.background = '';
+            }, 1000);
+        });
+
+        // Обработка формы подписки
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('emailInput');
+            const email = emailInput.value;
+            
+            if (email) {
+                alert('✅ Спасибо за подписку!\n\nВы будете получать информацию о наших новинках и специальных предложениях на адрес: ' + email);
+                emailInput.value = '';
+            }
+        });
+
+        // Плавная прокрутка для похожих товаров
+        document.querySelectorAll('.related-products .product-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Прокручиваем страницу вверх при клике на товар
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Добавляем плавный переход для изображения
+        document.getElementById('mainProductImage').style.transition = 'opacity 0.3s ease';
+
+        // Загружаем товар при загрузке страницы
+        loadProduct();
+    </script>
+</body>
+</html>
